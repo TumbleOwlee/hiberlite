@@ -8,7 +8,7 @@ C++ object-relational mapping with API inspired by the awesome Boost.Serializati
 
 ## Feature of this Fork
 
-Currently the following changes were applied to the original hiberlite implementation:
+Currently the following changes are applied to the original hiberlite implementation:
 
 * Direct control over the transaction. You can now use `Database::startTransaction()`, `Database::commitTransaction()` and `Database::rollbackTransaction()`.
     - **Note:** This feature is most-likely not thread-safe. To be safe, each thread has to hold its own `Database` object.
