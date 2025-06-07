@@ -2,8 +2,16 @@
 
 [![Build Status](https://travis-ci.org/paulftw/hiberlite.png?branch=master)](https://travis-ci.org/paulftw/hiberlite) [![Build status](https://ci.appveyor.com/api/projects/status/7hmib3hlpx40ap07/branch/master?svg=true)](https://ci.appveyor.com/project/d-led/hiberlite/branch/master)
 
+**This is a fork. You can find the original repository [here](https://github.com/paulftw/hiberlite).**
 
 C++ object-relational mapping with API inspired by the awesome Boost.Serialization - that means _almost no API to learn_.
+
+## Feature of this Fork
+
+Currently the following changes were applied to the original hiberlite implementation:
+
+* Direct control over the transaction. You can now use `Database::startTransaction()`, `Database::commitTransaction()` and `Database::rollbackTransaction()`.
+    - **Note:** This feature is most-likely not thread-safe. To be safe, each thread has to hold its own `Database` object.
 
 ## Usage
 

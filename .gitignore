@@ -219,3 +219,5 @@ pip-log.txt
 !premake4.exe
 *.a
 *.opendb
+
+build
