@@ -1,36 +1,34 @@
 #ifndef COMMON_H_
 #define COMMON_H_
 
-#include <string>
-#include <vector>
+#include <list>
 #include <map>
 #include <set>
-#include <list>
+#include <string>
+#include <vector>
 
-#include <stdexcept>
-#include <iostream>
 #include <algorithm>
+#include <iostream>
+#include <stdexcept>
 
 #include <sqlite3.h>
 
-namespace hiberlite{
+namespace hiberlite {
 
-class noncopyable
-{
-  protected:
+class noncopyable {
+protected:
     noncopyable() {}
     ~noncopyable() {}
-  private:
-    noncopyable( const noncopyable& );
-    const noncopyable operator=( const noncopyable& );
 
+private:
+    noncopyable(const noncopyable &);
+    const noncopyable operator=(const noncopyable &);
 };
 
 typedef sqlite_int64 sqlid_t;
 
-} //namespace hiberlite
+} // namespace hiberlite
 
 #define HIBERLITE_HL_DBG_DO(x) ;
-
 
 #endif
