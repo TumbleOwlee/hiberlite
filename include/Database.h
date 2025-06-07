@@ -1,6 +1,9 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
+#include "Visitor.h"
+#include "bean_ptr.h"
+#include "common.h"
 namespace hiberlite {
 
 class ModelExtractor;
@@ -83,6 +86,10 @@ public:
 
     template <class C>
     bean_ptr<C> manageBean(C *ptr);
+
+    void startTransaction();
+    void commitTransaction();
+    void rollbackTransaction();
 };
 
 } // namespace hiberlite

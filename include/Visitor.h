@@ -1,6 +1,10 @@
 #ifndef VISITOR_H
 #define VISITOR_H
 
+#include "CppModel.h"
+#include "common.h"
+#include "nvp.h"
+#include <shared_res.h>
 #include <stack>
 
 namespace hiberlite {

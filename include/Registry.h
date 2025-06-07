@@ -1,6 +1,7 @@
 #ifndef REGISTRY_H_INCLUDED
 #define REGISTRY_H_INCLUDED
 
+#include "SQLiteStmt.h"
 namespace hiberlite {
 
 class Database;

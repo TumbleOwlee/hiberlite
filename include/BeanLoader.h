@@ -1,6 +1,11 @@
 #ifndef BeanLoader_H
 #define BeanLoader_H
 
+#include "SQLiteStmt.h"
+#include "Visitor.h"
+#include "db_error.h"
+#include "nvp.h"
+#include <stack>
 namespace hiberlite {
 
 class LoadBean {

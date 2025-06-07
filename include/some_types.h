@@ -1,6 +1,10 @@
 #ifndef SOM_TYPES_H_INCLUDED
 #define SOM_TYPES_H_INCLUDED
 
+#include "nvp.h"
+#include <cstdint>
+#include <vector>
+
 namespace hiberlite {
 
 template <class E, class C>

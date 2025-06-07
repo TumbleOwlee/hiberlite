@@ -1,21 +1,36 @@
 #ifndef DATABASE_TMPL_IMPL_HPP_INCLUDED
 #define DATABASE_TMPL_IMPL_HPP_INCLUDED
 
+#include "BeanLoader.h"
+#include "BeanUpdater.h"
+#include "ModelExtractor.h"
+#include "bean_ptr.h"
+#include "hiberdefs.h"
+#include <ChildKiller.h>
+#include <Database.h>
+#include <shared_res.h>
+
 namespace hiberlite {
 
 template <class C>
 void Database::dbDelete(bean_key key, C &bean) {
     try {
-        dbExecQuery(key.con, "ROLLBACK TRANSACTION;");
+        if (!key.con->ta_active) {
+            dbExecQuery(key.con, "ROLLBACK TRANSACTION;");
+        }
     } catch (...) {
     }
-    dbExecQuery(key.con, "BEGIN TRANSACTION;");
+    if (!key.con->ta_active) {
+        dbExecQuery(key.con, "BEGIN TRANSACTION;");
+    }
 
     ChildKiller ck;
     ck.killChildren(key, bean);
     dbDeleteRows(key.con, Database::getClassName<C>(), HIBERLITE_PRIMARY_KEY_COLUMN, key.id);
 
-    dbExecQuery(key.con, "COMMIT TRANSACTION;");
+    if (!key.con->ta_active) {
+        dbExecQuery(key.con, "COMMIT TRANSACTION;");
+    }
 }
 
 template <class C>
@@ -27,17 +42,23 @@ void Database::dbDeleteRows(shared_connection con, std::string table, std::strin
 template <class C>
 void Database::dbUpdate(bean_key key, C &bean) {
     try {
-        dbExecQuery(key.con, "ROLLBACK TRANSACTION;");
+        if (!key.con->ta_active) {
+            dbExecQuery(key.con, "ROLLBACK TRANSACTION;");
+        }
     } catch (...) {
     }
-    dbExecQuery(key.con, "BEGIN TRANSACTION;");
+    if (!key.con->ta_active) {
+        dbExecQuery(key.con, "BEGIN TRANSACTION;");
+    }
 
     ChildKiller ck;
     ck.killChildren(key, bean);
     BeanUpdater u;
     u.update(key, bean);
 
-    dbExecQuery(key.con, "COMMIT TRANSACTION;");
+    if (!key.con->ta_active) {
+        dbExecQuery(key.con, "COMMIT TRANSACTION;");
+    }
 }
 
 template <class C>

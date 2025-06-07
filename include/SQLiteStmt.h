@@ -1,6 +1,11 @@
 #ifndef SQLITESTMT_H
 #define SQLITESTMT_H
 
+#include "common.h"
+#include <shared_res.h>
+#include <sqlite3.h>
+#include <string>
+
 namespace hiberlite {
 
 class statement_ptr {

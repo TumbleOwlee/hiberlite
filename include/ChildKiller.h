@@ -1,6 +1,11 @@
 #ifndef CHILDKILLER_H
 #define CHILDKILLER_H
 
+#include <Visitor.h>
+#include <nvp.h>
+#include <shared_res.h>
+#include <stack>
+
 namespace hiberlite {
 
 class KillChildren {

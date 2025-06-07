@@ -128,4 +128,31 @@ std::vector<sqlid_t> Database::dbSelectChildIds(std::string table, sqlid_t paren
     return dbSelectChildIds(con, table, parent);
 }
 
+void Database::startTransaction() {
+    if (con->ta_active) {
+        throw hiberlite::database_error("Transaction already active");
+    }
+
+    dbExecQuery(con, "BEGIN TRANSACTION;");
+    con->ta_active = true;
+}
+
+void Database::commitTransaction() {
+    if (!con->ta_active) {
+        throw hiberlite::database_error("Transaction not active");
+    }
+
+    dbExecQuery(con, "COMMIT TRANSACTION;");
+    con->ta_active = false;
+}
+
+void Database::rollbackTransaction() {
+    if (!con->ta_active) {
+        throw hiberlite::database_error("Transaction not active");
+    }
+
+    dbExecQuery(con, "ROLLBACK TRANSACTION;");
+    con->ta_active = false;
+}
+
 } // namespace hiberlite

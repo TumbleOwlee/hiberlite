@@ -1,6 +1,9 @@
 #ifndef CPPMODEL_H
 #define CPPMODEL_H
 
+#include <map>
+#include <string>
+
 namespace hiberlite {
 
 class Scope {

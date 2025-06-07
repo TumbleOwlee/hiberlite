@@ -1,4 +1,6 @@
+#pragma once
 
+#include "common.h"
 namespace hiberlite {
 
 template <class C>
@@ -98,6 +100,8 @@ public:
     }
 
     inline sqlite3 *getSQLite3Ptr() { return con; }
+
+    bool ta_active = false;
 };
 
 typedef shared_res<autoclosed_con> shared_connection;

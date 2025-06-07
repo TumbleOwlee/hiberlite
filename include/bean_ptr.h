@@ -1,6 +1,9 @@
 #ifndef BEAN_PTR_H_INCLUDED
 #define BEAN_PTR_H_INCLUDED
 
+#include "Registry.h"
+#include "Visitor.h"
+#include "common.h"
 namespace hiberlite {
 
 class Database;
