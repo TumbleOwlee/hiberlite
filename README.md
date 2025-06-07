@@ -1,6 +1,6 @@
 # Hiberlite ORM
 
-[![Build Status](https://travis-ci.org/paulftw/hiberlite.png?branch=master)](https://travis-ci.org/paulftw/hiberlite) [![Build status](https://ci.appveyor.com/api/projects/status/7hmib3hlpx40ap07/branch/master?svg=true)](https://ci.appveyor.com/project/d-led/hiberlite/branch/master)
+[![Unix](https://github.com/TumbleOwlee/hiberlite/actions/workflows/cmake-single-platform.yml/badge.svg)](https://github.com/TumbleOwlee/hiberlite/actions/workflows/cmake-single-platform.yml)
 
 **This is a fork. You can find the original repository [here](https://github.com/paulftw/hiberlite).**
 
