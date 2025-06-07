@@ -1,6 +1,10 @@
 #ifndef VISITOR_TMPL_IMPL_HPP_INCLUDED
 #define VISITOR_TMPL_IMPL_HPP_INCLUDED
 
+#include "Database.h"
+#include "Visitor.h"
+#include "shared_res.h"
+
 namespace hiberlite {
 
 template <class C>

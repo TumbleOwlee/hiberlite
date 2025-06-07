@@ -1,8 +1,13 @@
 #ifndef BEANUPDATER_H
 #define BEANUPDATER_H
 
+#include "Visitor.h"
+#include "nvp.h"
+#include "shared_res.h"
+#include <stack>
 #include <stdio.h>
 #include <string.h>
+#include <vector>
 
 namespace hiberlite {
 

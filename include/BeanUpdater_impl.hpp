@@ -1,6 +1,11 @@
 #ifndef BEANUPDATER_IMPL_HPP_INCLUDED
 #define BEANUPDATER_IMPL_HPP_INCLUDED
 
+#include "BeanUpdater.h"
+#include "Database.h"
+#include "nvp.h"
+#include <string>
+
 namespace hiberlite {
 
 template <class C>

@@ -1,3 +1,8 @@
+#pragma once
+
+#include "Database.h"
+#include "bean_ptr.h"
+
 namespace hiberlite {
 
 template <class C>
